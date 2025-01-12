@@ -1,58 +1,57 @@
-import { CRS } from 'leaflet';
 import STAC from './src/models/stac';
 import Utils from './src/utils';
 
 const USGS_ATTRIBUTION = 'USGS Astrogeology';
-const WMS = 'LWMSTileLayer';
-const XYZ = 'LTileLayer';
+const WMS = 'TileWMS';
+const XYZ = 'XYZ';
 
+// All options (except for 'is') follow the OpenLayers options for the respective source class.
 const BASEMAPS = {
   earth: {
     url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-    name: 'OpenStreetMap',
+    title: 'OpenStreetMap',
     is: XYZ,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors.'
+    attributions: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors.'
   },
   europa: {
-    baseUrl: 'https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/jupiter/europa_simp_cyl.map',
+    url: 'https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/jupiter/europa_simp_cyl.map',
     is: WMS,
-    name: 'USGS Europa',
-    attribution: USGS_ATTRIBUTION,
-    crs: CRS.EPSG4326,
-    format: 'image/png',
-    layers: 'GALILEO_VOYAGER'
+    title: 'USGS Europa',
+    attributions: USGS_ATTRIBUTION,
+    projection: "EPSG:4326",
+    params: {
+      FORMAT: 'image/png',
+      LAYERS: 'GALILEO_VOYAGER'
+    }
   },
   mars: {
-    baseUrl: 'https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/mars/mars_simp_cyl.map',
+    url: 'https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/mars/mars_simp_cyl.map',
     is: WMS,
-    name: 'USGS Mars',
-    attribution: USGS_ATTRIBUTION,
-    crs: CRS.EPSG4326,
-    format: 'image/png',
-    layers: 'MDIM21'
+    title: 'USGS Mars',
+    attributions: USGS_ATTRIBUTION,
+    projection: "EPSG:4326",
+    params: {
+      FORMAT: 'image/png',
+      LAYERS: 'MDIM21'
+    }
   },
   moon: {
-    baseUrl: 'https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/earth/moon_simp_cyl.map',
+    url: 'https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/earth/moon_simp_cyl.map',
     is: WMS,
-    name: 'USGS Moon',
-    attribution: USGS_ATTRIBUTION,
-    crs: CRS.EPSG4326,
-    format: 'image/png',
-    layers: 'LROC_WAC'
+    title: 'USGS Moon',
+    attributions: USGS_ATTRIBUTION,
+    projection: "EPSG:4326",
+    params: {
+      FORMAT: 'image/png',
+      LAYERS: 'LROC_WAC'
+    }
   }
 };
 
 /**
- * @typedef BasemapOptions
- * @type {Object}
- * @property {string} is Component: LWMSTileLayer or LTileLayer
- * @see https://vue2-leaflet.netlify.app/components/
- */
-
-/**
  * 
  * @param {Object} stac The STAC object
- * @param {Object} map The Leaflet map object
+ * @param {Object} map The OL map object
  * @param {Object} i18n Vue I18N object
  * @returns {Array.<BasemapOptions>}
  */

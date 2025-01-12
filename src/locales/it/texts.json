@@ -151,12 +151,14 @@
     "noneAvailableForCollection": "Non ci sono Elementi disponibili per questa Collezione.",
     "showFilter": "Mostra filtri"
   },
-  "leaflet": {
-    "close": "Chiudi",
-    "noFeatureProperties": "Non ci sono altri dati disponibili per questo Elemento.",
-    "stayLayer": {
-      "error": "Non è stato possibile aggiungere i dati alla mappa"
+  "loading": "Carico...",
+  "map": "Mappa",
+  "mapping": {
+    "attribution": {
+      "label": "i",
+      "collapseLabel": "✕"
     },
+    "close": "Chiudi",
     "zoom": {
       "in": {
         "description": "Zoom avanti",
@@ -164,12 +166,10 @@
       },
       "out": {
         "description": "Zoom indietro",
-        "label": "-"
+        "label": "–"
       }
     }
   },
-  "loading": "Carico...",
-  "map": "Mappa",
   "messageForSchemaError": "{message} per lo schema {schemaPath}",
   "metadata": {
     "general": "Generale",

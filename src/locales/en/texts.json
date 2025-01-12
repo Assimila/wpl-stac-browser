@@ -151,12 +151,19 @@
     "noneAvailableForCollection": "No items available for this collection.",
     "showFilter": "Show Filters"
   },
-  "leaflet": {
-    "close": "Close",
-    "noFeatureProperties": "No additional data available for this feature.",
-    "stayLayer": {
-      "error": "Sorry, adding the data to the map failed."
+  "loading": "Loading...",
+  "map": "Map",
+  "mapping": {
+    "attribution": {
+      "label": "i",
+      "description": "Attributions",
+      "collapseLabel": "✕"
     },
+    "bboxSelect": {
+      "add": "Click on the map to add a bounding box.",
+      "remove": "Click inside the bounding box to remove it."
+    },
+    "close": "Close",
     "zoom": {
       "in": {
         "description": "Zoom in",
@@ -164,12 +171,10 @@
       },
       "out": {
         "description": "Zoom out",
-        "label": "-"
+        "label": "–"
       }
     }
   },
-  "loading": "Loading...",
-  "map": "Map",
   "messageForSchemaError": "{message}, for schema {schemaPath}",
   "metadata": {
     "general": "General",

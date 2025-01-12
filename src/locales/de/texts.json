@@ -151,12 +151,19 @@
     "noneAvailableForCollection": "Für diesen Katalog sind keine Elemente verfügbar.",
     "showFilter": "Zeige Filter"
   },
-  "leaflet": {
-    "close": "Schließen",
-    "noFeatureProperties": "Keine weiteren Daten verfügbar für dieses Element.",
-    "stayLayer": {
-      "error": "Entschuldigung, die Daten auf der Karte anzuzeigen ist fehlgeschlagen."
+  "loading": "Lade...",
+  "map": "Karte",
+  "mapping": {
+    "attribution": {
+      "label": "i",
+      "description": "Namensnennungen",
+      "collapseLabel": "✕"
     },
+    "bboxSelect": {
+      "add": "Klicke auf die Karte, um eine Box für die räumliche Ausdehnung zu erstellen.",
+      "remove": "Klicke in die Box, um sie zu entfernen."
+    },
+    "close": "Schließen",
     "zoom": {
       "in": {
         "description": "Vergrößern",
@@ -164,12 +171,10 @@
       },
       "out": {
         "description": "Verkleinern",
-        "label": "-"
+        "label": "–"
       }
     }
   },
-  "loading": "Lade...",
-  "map": "Karte",
   "messageForSchemaError": "{message}, für Schema {schemaPath}",
   "metadata": {
     "general": "Allgemeines",
