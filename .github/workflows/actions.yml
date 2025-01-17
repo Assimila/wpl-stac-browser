@@ -12,7 +12,8 @@ jobs:
           node-version: 'lts/*'
       - uses: actions/checkout@v3
       - run: npm install
-      - run: npm run build -- --pathPrefix="/stac-browser" --historyMode=hash
+      # pathPrefix to match gh-pages default url https://<username>.github.io/<repo>
+      - run: npm run build -- --pathPrefix="/wpl-stac-browser" --historyMode=hash
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
