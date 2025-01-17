@@ -1,6 +1,6 @@
 module.exports = {
     catalogUrl: null,
-    catalogTitle: "STAC Browser",
+    catalogTitle: "WorldPeatland STAC Browser",
     allowExternalAccess: true, // Must be true if catalogUrl is not given
     allowedDomains: [],
     detectLocaleFromBrowser: true,
@@ -27,7 +27,7 @@ module.exports = {
     buildTileUrlTemplate: ({href, asset}) => "https://tiles.rdnt.io/tiles/{z}/{x}/{y}@2x?url=" + encodeURIComponent(asset.href.startsWith("/vsi") ? asset.href : href),
     stacProxyUrl: null,
     pathPrefix: "/",
-    historyMode: "history",
+    historyMode: "hash", // must be hash for GitHub Pages
     cardViewMode: "cards",
     cardViewSort: "asc",
     showKeywordsInItemCards: false,
