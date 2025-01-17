@@ -1,7 +1,7 @@
 module.exports = {
-    catalogUrl: null,
+    catalogUrl: "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/stac/catalog.json",
     catalogTitle: "WorldPeatland STAC Browser",
-    allowExternalAccess: true, // Must be true if catalogUrl is not given
+    allowExternalAccess: false, // Must be true if catalogUrl is not given
     allowedDomains: [],
     detectLocaleFromBrowser: true,
     storeLocale: true,
