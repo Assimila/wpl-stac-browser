@@ -2,7 +2,7 @@ name: Deploy
 on:
   push:
     branches:
-      - main
+      - wpl
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -17,6 +17,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: dist
+          publish_branch: gh-pages  # default: gh-pages
           exclude_assets: 'report.html'
-          user_name: 'STAC Browser CI'
-          user_email: matthias.mohr@radiant.earth
