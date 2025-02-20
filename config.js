@@ -1,7 +1,7 @@
 module.exports = {
-    catalogUrl: null,
-    catalogTitle: "STAC Browser",
-    allowExternalAccess: true, // Must be true if catalogUrl is not given
+    catalogUrl: "https://s3.waw3-2.cloudferro.com/swift/v1/wpl-stac/stac/catalog.json",
+    catalogTitle: "WorldPeatland STAC Browser",
+    allowExternalAccess: false, // Must be true if catalogUrl is not given
     allowedDomains: [],
     detectLocaleFromBrowser: true,
     storeLocale: true,
@@ -27,10 +27,10 @@ module.exports = {
     apiCatalogPriority: null,
     useTileLayerAsFallback: true,
     displayGeoTiffByDefault: false,
-    buildTileUrlTemplate: ({href, asset}) => "https://tiles.rdnt.io/tiles/{z}/{x}/{y}@2x?url=" + encodeURIComponent(href),
+    buildTileUrlTemplate: ({href, asset}) => "https://tiles.rdnt.io/tiles/{z}/{x}/{y}@2x?resample=nearest&url=" + encodeURIComponent(href),
     stacProxyUrl: null,
     pathPrefix: "/",
-    historyMode: "history",
+    historyMode: "hash", // must be hash for GitHub Pages
     cardViewMode: "cards",
     cardViewSort: "asc",
     showKeywordsInItemCards: false,
