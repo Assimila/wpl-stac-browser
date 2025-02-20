@@ -25,7 +25,11 @@ module.exports = {
 //      "pt-BR"
     ],
     apiCatalogPriority: null,
-    useTileLayerAsFallback: true,
+    // false => always use server side rendering
+    // because v3.3.3 of stac-browser still depends on "stac-layer": "^0.15.0" which is 3 years old!
+    // can't handle nans in COG properly :-(
+    // in the near future stac-browser will be updated to use open layers and ol-stac
+    useTileLayerAsFallback: false,
     displayGeoTiffByDefault: false,
     buildTileUrlTemplate: ({href, asset}) => "https://tiles.rdnt.io/tiles/{z}/{x}/{y}@2x?resample=nearest&url=" + encodeURIComponent(href),
     stacProxyUrl: null,
