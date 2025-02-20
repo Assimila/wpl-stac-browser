@@ -7,10 +7,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: npm install
       # pathPrefix to match gh-pages default url https://<username>.github.io/<repo>
       - run: npm run build -- --pathPrefix="/wpl-stac-browser"
@@ -20,3 +20,5 @@ jobs:
           publish_dir: dist
           publish_branch: gh-pages  # default: gh-pages
           exclude_assets: 'report.html'
+          user_name: 'STAC Browser CI'
+          user_email: matthias.mohr@radiant.earth

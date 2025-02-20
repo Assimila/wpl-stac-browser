@@ -13,18 +13,21 @@ module.exports = {
         "es",
         "en",
 //      "en-GB",
+//      "en-US",
         "fr",
 //      "fr-CA",
 //      "fr-CH",
         "it",
 //      "it-CH",
         "ro",
-        "ja"
+        "ja",
+        "pt",
+//      "pt-BR"
     ],
     apiCatalogPriority: null,
     useTileLayerAsFallback: true,
     displayGeoTiffByDefault: false,
-    buildTileUrlTemplate: ({href, asset}) => "https://tiles.rdnt.io/tiles/{z}/{x}/{y}@2x?resample=nearest&url=" + encodeURIComponent(asset.href.startsWith("/vsi") ? asset.href : href),
+    buildTileUrlTemplate: ({href, asset}) => "https://tiles.rdnt.io/tiles/{z}/{x}/{y}@2x?resample=nearest&url=" + encodeURIComponent(href),
     stacProxyUrl: null,
     pathPrefix: "/",
     historyMode: "hash", // must be hash for GitHub Pages
@@ -41,6 +44,7 @@ module.exports = {
     crossOriginMedia: null,
     requestHeaders: {},
     requestQueryParameters: {},
+    socialSharing: ['email', 'bsky', 'mastodon', 'x'],
     preprocessSTAC: null,
     authConfig: null
 };
