@@ -33,7 +33,9 @@ export default {
   ],
   computed: {
     showTable() {
-      return FORCE_TABLE.includes(this.field) || this.itemOrder.length > 0 && Utils.size(this.value) >= 3;
+      // return FORCE_TABLE.includes(this.field) || this.itemOrder.length > 0 && Utils.size(this.value) >= 3;
+      // show the table even for 1 row
+      return FORCE_TABLE.includes(this.field) || this.itemOrder.length > 0 && Utils.size(this.value) >= 0;
     }
   }
 };
